@@ -1,0 +1,9 @@
+<h1><%= @moon.name %></h1>
+
+<ul>
+    <li>Fuel: <%= @moon.fuel %></li>
+    <li>Food: <%= @moon.food %></li>
+    <li>Gold: <%= @moon.gold %></li>
+</ul>
+
+<p>Travel Back to <%= link_to @moon.planet.name, @moon.planet %></p>

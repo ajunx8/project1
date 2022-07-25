@@ -1,0 +1,9 @@
+<h1>Travel to a Planet</h1>
+
+<ul>
+    <% @planets.each do |planet| %>
+        <li>
+            <%= button_to planet.name, planet, :method => :get %>
+        </li>
+    <% end %>
+</ul>

@@ -1,0 +1,21 @@
+<h1><%= @planet.name %></h1>
+
+<nav><%= button_to('Your Travels', user_path(@current_user), :method => :get) if @current_user.present? %></nav>
+
+<ul>
+    <li>Name: <%= @planet.name %></li>
+    <li>Fuel: <%= @planet.fuel %> </li>
+    <li>Food: <%= @planet.food %></li>
+    <li>Gold: <%= @planet.gold %></li>
+</ul>
+
+<% if @planet.moons.present? %>
+    <p>Travel to Moon:</p>
+    <% @planet.moons.each do |moon| %>
+        <%= link_to moon.name, moon %>
+    <% end %>
+<% end %>
+    
+    
+    
+<%# link_to image_tag(work.image, :class => 'thumb'), work %>
