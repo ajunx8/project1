@@ -1,7 +1,7 @@
-<h1><%= @planet.name %></h1>
+<h1><%= @planet.name.upcase %></h1>
 
-<nav><%= button_to('Your Travels', user_path(@current_user), :method => :get) if @current_user.present? %></nav>
-
+<main>
+<h3>Resources:</h2>
 <ul>
     <li>Name: <%= @planet.name %></li>
     <li>Fuel: <%= @planet.fuel %> </li>
@@ -9,13 +9,26 @@
     <li>Gold: <%= @planet.gold %></li>
 </ul>
 
+<%= link_to 'Extract', extract_planet_path(@planet.id), :method => 'put' %>
+
 <% if @planet.moons.present? %>
     <p>Travel to Moon:</p>
     <% @planet.moons.each do |moon| %>
         <%= link_to moon.name, moon %>
     <% end %>
+<% else %>
+    <p>Sorry, no Moons to explore</p>
 <% end %>
-    
+</main>
+
+<aside>
+    <%= link_to 'All planets', planets_path, :method => 'get' %> <br>
+    Your Resources: <br>
+    Fuel: <%= @current_user.fuel %> <br>
+    Food: <%= @current_user.food %> <br>
+    Gold: <%= @current_user.gold %> <br>
+    <%= link_to 'Your Travels', user_path(@current_user), :class => 'stats' if @current_user.present? %>
+</aside>    
     
     
 <%# link_to image_tag(work.image, :class => 'thumb'), work %>

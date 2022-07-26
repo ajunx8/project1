@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_22_080233) do
+ActiveRecord::Schema.define(version: 2022_07_26_012108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "logs", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "moons", force: :cascade do |t|
     t.text "name"
@@ -36,6 +42,10 @@ ActiveRecord::Schema.define(version: 2022_07_22_080233) do
 
   create_table "users", force: :cascade do |t|
     t.text "email"
+    t.text "name"
+    t.integer "fuel", default: 0
+    t.integer "food", default: 0
+    t.integer "gold", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

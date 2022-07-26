@@ -1,4 +1,10 @@
-<h1>Your Travels</h1>
+<h1>YOUR TRAVELS</h1>
 
 <%= @user.email %>
+<ul>
+    <li>Fuel: <%= @user.fuel %></li>
+    <li>Food: <%= @user.food %></li>
+    <li>Gold: <%= @user.gold %></li>
+</ul>
 
+<%= link_to 'Back', :back %>

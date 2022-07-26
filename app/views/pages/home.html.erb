@@ -1,4 +1,4 @@
-<h1>Space Exploration Game</h1>
+<h1>SPACE EXPLORATION GAME</h1>
 
 <p>Welcome back user <%= @current_user.email if @current_user.present? %></p>
 
@@ -7,5 +7,6 @@
 <p>Explore planets, trade resources, survive the longest <br> OR gain the most gold <br> OR travel the furthest <br> OR travel back to earth with greatest resources</p>
 <p>See your travel history</p>
 <p>Users can discover planets(create planet) <br>discover resources in that planet by playing a random game(secret number) <br>how to add distance away from earth as a variable?? and how it is related to fuel</p>
+<p>How to generate a new planet???</p>
 
 <p><%= button_to('Your Travels', user_path(@current_user), :method => :get) if @current_user.present? %></p>
