@@ -13,21 +13,47 @@
   </head>
 
   <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="container">
-    <nav>
-      <%= link_to 'Home', root_path %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <%= link_to 'Home', root_path, :class => 'nav-link' %>
+            </li>
+            |
+            <% if @current_user.present? %>
+              <li class="nav-item">
+                <%= link_to 'All users', users_path, :class => 'nav-link' if @current_user.admin? %> 
+              </li>
+              <li class="nav-item">
+                <%= link_to "Log out #{ @current_user.email }", login_path, :method => 'delete', :class => 'nav-link' %>
+              </li>
+              |
+              <% else %>
+              <li class="nav-item">
+                <%= link_to 'Sign up', new_user_path, :class => 'nav-link' %>
+              </li>
+              |
+              <li class="nav-item">
+                <%= link_to 'Sign In', login_path, :class => 'nav-link' %>
+              </li>
+              |
+            <% end   %>
 
-      <% if @current_user.present? %>
-        <%= link_to 'All users', users_path if @current_user.admin? %>
-        <%= link_to "Log out #{ @current_user.email }", login_path, :method => 'delete' %>
-      <% else %>
-        <%= link_to 'Sign up', new_user_path %>
-        <%= link_to 'Sign In', login_path %>
-      <% end   %>
-    </nav>
+            <li class="nav-item">
+              <%= link_to 'Travel Log', user_path(@current_user), :class => 'nav-link' if @current_user.present? %>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+
       <%= yield %>
-  </div>
-  
+
+    </div>
   </body>
 </html>

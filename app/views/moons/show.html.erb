@@ -1,18 +1,18 @@
-<h1><%= @moon.name.upcase %></h1>
+<h1>Welcome to Moon <%= @moon.name.upcase %> of Planet <%= @moon.planet.name %></h1>
 
 <main>
     <ul>
         <li>Fuel: <%= @moon.fuel %></li>
         <li>Food: <%= @moon.food %></li>
         <li>Gold: <%= @moon.gold %></li>
+        <li><%= link_to 'Extract', extract_moon_path(@moon.id), :method => 'put' %></li>
     </ul>
-
-    <%= link_to 'Extract', extract_moon_path(@moon.id), :method => 'put' %>
-
     <p>Travel Back to <%= link_to @moon.planet.name, @moon.planet %></p>
 </main>
 
 <aside>
-    <%= link_to 'All planets', planets_path, :method => 'get' %> <br>
-    <%= link_to 'Your Travels', user_path(@current_user), :class => 'stats' if @current_user.present? %>
+    Your Resources: <br>
+    Fuel: <%= @current_user.fuel %> <br>
+    Food: <%= @current_user.food %> <br>
+    Gold: <%= @current_user.gold %> <br>
 </aside> 

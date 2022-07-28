@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_for_admin, :only => [:index]
+  before_action :drain_food, :except => [:update]
+  after_action :remove_log_from_session
 
   def index
     @user = User.all
@@ -21,6 +23,16 @@ class UsersController < ApplicationController
 
   def show
     @user = @current_user
+  end
+
+  def update
+    @current_user.fuel = 10000
+    @current_user.food = 2000
+    @current_user.gold = 10000
+    @current_user.logs.delete_all
+    @current_user.save
+    session[:time] = nil
+    redirect_to root_path
   end
 
   private

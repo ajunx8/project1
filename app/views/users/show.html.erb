@@ -1,10 +1,18 @@
 <h1>YOUR TRAVELS</h1>
+<div class="row">
+    <div class="col-10">
+    <%= @user.email %>
+    <ul>
+        <li>Fuel: <%= @user.fuel %></li>
+        <li>Food: <%= @user.food %></li>
+        <li>Gold: <%= @user.gold %></li>
+    </ul>
+    <% @user.logs.each do |log| %>
+        <p><%= log.description %></p>
+    <% end %>
+    </div>
 
-<%= @user.email %>
-<ul>
-    <li>Fuel: <%= @user.fuel %></li>
-    <li>Food: <%= @user.food %></li>
-    <li>Gold: <%= @user.gold %></li>
-</ul>
-
-<%= link_to 'Back', :back %>
+    <div class="col-2">
+        <%= button_to 'Back', :back, :method => 'get', :id => 'discover' %>
+    </div>
+</div>
