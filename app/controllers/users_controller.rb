@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_for_admin, :only => [:index]
-  before_action :drain_food, :except => [:update]
+  before_action :drain_food, :only => [:show]
   after_action :remove_log_from_session
 
   def index
