@@ -1,6 +1,6 @@
 class PlanetsController < ApplicationController
   before_action :check_for_login, :only => [:index]
-  before_action :drain_food
+  before_action :drain_food, :except => [:index]
   after_action :remove_log_from_session, :except => [:index, :show]
 
   def index

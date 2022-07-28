@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     end
 
     def game_over
+        session[:time] = nil
     end
 
 end
