@@ -3,9 +3,9 @@
     <div class="col-10">
     <%= @user.email %>
     <ul>
-        <li>Fuel: <%= @user.fuel %></li>
-        <li>Food: <%= @user.food %></li>
-        <li>Gold: <%= @user.gold %></li>
+        <li>Fuel: <span id="fuel"><%= @user.fuel %></span></li>
+        <li>Food: <span id="food"><%= @user.food %></span></li>
+        <li>Gold: <span id="gold"><%= @user.gold %></span></li>
     </ul>
     <% @user.logs.each do |log| %>
         <p><%= log.description %></p>

@@ -1,34 +1,43 @@
-<h1>Welcome to Planet <%= @planet.name.upcase %></h1>
+<div class="loading">
+    <%= image_tag("spacetravel/spacetravel2.gif", :class => "hi") %>
+</div>
 
-<div class="row">
-    <div class="col-10">
-        <h3>Resources:</h2>
-        <ul>
-            <li>Name: <%= @planet.name %></li>
-            <li>Fuel: <%= @planet.fuel %></li>
-            <li>Food: <%= @planet.food %></li>
-            <li>Gold: <%= @planet.gold %></li>
-            <li><%= button_to 'Extract', extract_planet_path(@planet.id), :method => 'put', :id => 'discover' %></li>
-        </ul>
 
-        <% if @planet.moons.present? %>
-            <p>Travel to Moon:</p>
-            <% @planet.moons.each do |moon| %>
-                <li>
-                    <%= link_to moon.name, moon %>
-                </li>
+<div class="content">
+    <h1>Welcome to Planet <%= @planet.name.upcase %></h1>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Discovered Resources:</h3>
+            <ul>
+                <li>Fuel: <span id="fuel"><%= @planet.fuel %></span></li>
+                <li>Food: <span id="food"><%= @planet.food %></span></li>
+                <li>Gold: <span id="gold"><%= @planet.gold %></span></li>
+            </ul>
+
+            <% if @planet.moons.present? %>
+                <p>Travel to Moon:</p>
+                <% @planet.moons.each do |moon| %>
+                    <li>
+                        <%= link_to moon.name, moon %>
+                    </li>
+                <% end %>
+            <% else %>
+                <p>Sorry, no Moons to explore</p>
             <% end %>
-        <% else %>
-            <p>Sorry, no Moons to explore</p>
-        <% end %>
-    </div>
+        </div>
 
-    <div class="col-2">
-        <%= button_to 'All planets', planets_path, :method => 'get', :id => 'discover' %><br>
-        Your Resources: <br>
-        Fuel: <%= @current_user.fuel %> <br>
-        Food: <%= @current_user.food %> <br>
-        Gold: <%= @current_user.gold %> <br>
+        <div class="col-6">
+            <%= button_to 'Extract', extract_planet_path(@planet.id), :method => 'put', :id => 'extract' %>
+        </div>
+
+        <div class="col-2">
+            <%= button_to 'All planets', planets_path, :method => 'get', :id => 'all-planets' %><br>
+            Your Resources: <br>
+            Fuel: <span id="fuel"><%= @current_user.fuel %></span><br>
+            Food: <span id="food"><%= @current_user.food %></span><br>
+            Gold: <span id="gold"><%= @current_user.gold %></span><br>
+        </div>
     </div>
 </div>
     

@@ -1,3 +1,8 @@
-<h1>GAME OVER</h1>
+<h1 id="over">YOU DIED - GAME OVER</h1>
 
-<%= button_to 'NEW GAME?', user_path(@current_user), :method => 'put', :id => 'discover' %>
+Final Resources: <br>
+Fuel: <span id="fuel"><%= @current_user.fuel %></span>
+Food: <span id="food"><%= @current_user.food %></span>
+Gold: <span id="gold"><%= @current_user.gold %></span>
+
+<%= button_to 'NEW GAME?', user_path(@current_user), :method => 'put', :id => 'new-game' %>

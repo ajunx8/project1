@@ -26,9 +26,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @current_user.fuel = 10000
+    @current_user.fuel = 1000
     @current_user.food = 2000
-    @current_user.gold = 10000
+    @current_user.gold = 0
     @current_user.logs.delete_all
     @current_user.save
     session[:time] = nil

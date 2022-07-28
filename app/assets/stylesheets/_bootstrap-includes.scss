@@ -15,12 +15,69 @@ h1 {
     font-family: 'VT323', monospace;
 }
 
+#time-start {
+    padding: 5px;
+    background-color: greenyellow;
+    border-radius: 1em;
+}
+
+#rules {
+    margin-top: 20px;
+}
+
+#rules li {
+    list-style: none;
+}
+
 li {
+    display: grid;
+    list-style: none;
+}
+
+#extract {
+    background-color: red;
+    border-radius: 1em;
+}
+
+#all-planets {
+    background-color: red;
+    border-radius: 1em;
+}
+
+#fuel {
+    color: rgb(221, 146, 34);
+}
+#food {
+    color: rgb(14, 196, 32);
+}
+#gold {
+    color: rgb(242, 255, 53);
+}
+
+.planet {
     display: inline-block;
     padding: 10px;
 }
 
-#discover {
-    margin: auto;
-    background-color: rgb(183, 33, 33);
+#friend {
+    margin-top: 100px;
 }
+
+#new-game {
+    margin: 2em auto 1em;
+    background-color: #00f218;
+    border-radius: 1em;
+    padding: 9px;
+    position: relative;
+    display: block;
+}
+
+#over {
+    text-align: center;
+    color: red;
+}
+
+.content {
+    visibility: hidden;
+}
+

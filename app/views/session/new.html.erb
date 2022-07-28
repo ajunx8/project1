@@ -4,12 +4,16 @@
     <h2><%= flash[:error] %></h2>
 <% end %>
 
-<%= form_tag login_path do %> <!-- why = here? -->
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
+<%= form_tag login_path do %>
+    <div class="form-group">
+        <%= label_tag :email %>
+        <%= email_field_tag :email %>
+    </div>
 
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <div class="form-group">
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+    </div>
 
     <%= submit_tag "Sign In" %>
 <% end %>
