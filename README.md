@@ -1,5 +1,5 @@
 # SURVIVAL SPACE EXPLORATION
-> Play Survival Space Exploration! Free!
+> Play Survival Space Exploration! Free! [HERE](https://fierce-coast-57097.herokuapp.com/)
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -49,7 +49,7 @@ List the ready features here:
 
 
 ## Setup
-Play here: 
+Play here: https://fierce-coast-57097.herokuapp.com/
 
 ## Project Status
 Project is: _in progress_
