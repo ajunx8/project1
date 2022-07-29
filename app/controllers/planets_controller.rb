@@ -19,7 +19,7 @@ class PlanetsController < ApplicationController
     session[:new_log] = true
   end
 
-  def extract
+  def extract 
     @planet = Planet.find params[:id]
     @planet.fuel *= 0.5
     @current_user.fuel += @planet.fuel
@@ -32,7 +32,7 @@ class PlanetsController < ApplicationController
     redirect_to planet_path
   end
 
-  def new
+  def new # SET PLANET RESOURCE PARAMETERS HERE
     @planet = Planet.new
     chance = rand(10)
     if chance > 8
