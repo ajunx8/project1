@@ -38,7 +38,7 @@ class PlanetsController < ApplicationController
     if chance > 8
       @planet.name = RandomNameGenerator.new.compose(3) + '-' + RandomNameGenerator.new.compose(5) + '-' + rand(10).to_s
       @planet.fuel = rand(100000)
-      @planet.food = rand(40000)
+      @planet.food = rand(30000)
       @planet.gold = rand(1000000)
       rand(10).times.map {
         @moon = @planet.moons.new
