@@ -40,7 +40,7 @@ List the ready features here:
 - SignUp/SignIn with password authentication
 - Administrator permissions
 - New game button
-- Exciting random number game rules
+- Random number game mechanics
 - Random name generator
 
 
