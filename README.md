@@ -29,7 +29,7 @@ To understand Ruby on rails and how to integrate a wider variety of technologies
 - heroku
 - HTML5
 - W3. CSS 4.15
-- ES6 (ECMAScript 2018)
+- Javascript ES6 (ECMAScript 2018)
 - Ruby Gem Bootstrap v4.6.1
 - bcrypt 3.1.7
 - Ruby Gem Random name generator v2.0.1 by folkengine
